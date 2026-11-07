@@ -7,10 +7,17 @@ cask "octorunner" do
   desc "Native macOS manager for self-hosted GitHub Actions runners"
   homepage "https://github.com/loesch-digital/octorunner"
 
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
   depends_on arch: :arm64
 
   app "OctoRunner.app"
+
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/OctoRunner.app"]
+  end
+
+  uninstall quit: "io.octorunner.macos"
 
   zap trash: [
     "~/Library/Application Support/io.octorunner.macos",
