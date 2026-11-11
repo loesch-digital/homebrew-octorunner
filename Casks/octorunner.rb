@@ -1,6 +1,6 @@
 cask "octorunner" do
-  version "0.4.1"
-  sha256 "be8bcaec16fd6ce9ef956eb219fde3ead51552aea757d42f0561e4556f60d96b"
+  version "0.4.3"
+  sha256 "e04ba4235d791e5930e22ea15a82570b483fc05bf166f86465e2da8b3aa1ae7d"
 
   url "https://github.com/loesch-digital/octorunner/releases/download/v#{version}/OctoRunner-#{version}-arm64.zip"
   name "OctoRunner"
@@ -11,12 +11,6 @@ cask "octorunner" do
   depends_on arch: :arm64
 
   app "OctoRunner.app"
-
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/OctoRunner.app"],
-                   sudo: false
-  end
 
   uninstall quit: "io.octorunner.macos"
 
