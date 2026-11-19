@@ -1,6 +1,6 @@
 cask "octorunner" do
-  version "0.5.0"
-  sha256 "5a7702227d55b3bb3d730f94fbf38470157fae29703e2b99c0a1fe780346d5dc"
+  version "0.5.1"
+  sha256 "5b3a4fbdcdde338ee9157952b0b193d0d6d974081b2820a871ceb4cb7d5e8c7e"
 
   url "https://github.com/loesch-digital/octorunner/releases/download/v#{version}/OctoRunner-#{version}-arm64.zip"
   name "OctoRunner"
