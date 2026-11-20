@@ -1,14 +1,32 @@
-# Homebrew Tap for OctoRunner
+# loesch-digital Homebrew Tap
 
-Install **OctoRunner** (`v0.2.0`) on macOS (Apple Silicon, macOS 15+):
+Install macOS apps from loesch-digital with Homebrew.
 
-```bash
-brew tap loesch-digital/octorunner
-brew install --cask octorunner
+| App | Cask | Requirements |
+| --- | --- | --- |
+| [OctoRunner](https://github.com/loesch-digital/octorunner) | `loesch-digital/tap/octorunner` | macOS 15 or later, Apple Silicon |
+
+## Install OctoRunner
+
+```sh
+brew install --cask loesch-digital/tap/octorunner
 ```
 
-Upgrade to the latest version:
+If Homebrew asks you to trust the cask, run these commands:
 
-```bash
-brew update && brew upgrade --cask octorunner
+```sh
+brew tap loesch-digital/tap
+brew trust --cask loesch-digital/tap/octorunner
+brew install --cask loesch-digital/tap/octorunner
 ```
+
+To upgrade:
+
+```sh
+brew update
+brew upgrade --cask loesch-digital/tap/octorunner
+```
+
+## Cask layout
+
+Each app has its own file under `Casks/`. Its release workflow updates that file for the latest stable release. Download archives and older versions are available from the app's own GitHub Releases page.
